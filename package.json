@@ -1,0 +1,46 @@
+{
+  "name": "react-intern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:1": "vite lessons/lesson-1",
+    "dev:2": "vite lessons/lesson-2",
+    "dev:3": "vite lessons/lesson-3",
+    "dev:4": "vite lessons/lesson-4",
+    "build:1": "vite build lessons/lesson-1",
+    "build:2": "vite build lessons/lesson-2",
+    "build:3": "vite build lessons/lesson-3",
+    "build:4": "vite build lessons/lesson-4",
+    "preview:1": "vite preview lessons/lesson-1",
+    "preview:2": "vite preview lessons/lesson-2",
+    "preview:3": "vite preview lessons/lesson-3",
+    "preview:4": "vite preview lessons/lesson-4",
+    "lint": "eslint \"lessons/**/*.tsx\"",
+    "render:html": "marp react-development.md -o presentation.html",
+    "render:pptx": "marp react-development.md -o presentation.pptx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.4.0",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.60.0",
+    "@typescript-eslint/parser": "^8.60.0",
+    "@vitejs/plugin-react": "^6.0.2",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  }
+}
