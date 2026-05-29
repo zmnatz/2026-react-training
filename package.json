@@ -1,21 +1,22 @@
 {
   "name": "react-intern",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:1": "vite lessons/lesson-1",
-    "dev:2": "vite lessons/lesson-2",
-    "dev:3": "vite lessons/lesson-3",
-    "dev:4": "vite lessons/lesson-4",
-    "build:1": "vite build lessons/lesson-1",
-    "build:2": "vite build lessons/lesson-2",
-    "build:3": "vite build lessons/lesson-3",
-    "build:4": "vite build lessons/lesson-4",
-    "preview:1": "vite preview lessons/lesson-1",
-    "preview:2": "vite preview lessons/lesson-2",
-    "preview:3": "vite preview lessons/lesson-3",
-    "preview:4": "vite preview lessons/lesson-4",
+    "dev:1": "vite lessons/01-state",
+    "dev:2": "vite lessons/02-context",
+    "dev:3": "vite lessons/03-data",
+    "dev:4": "vite lessons/04-router",
+    "build:1": "vite build lessons/01-state",
+    "build:2": "vite build lessons/02-context",
+    "build:3": "vite build lessons/03-data",
+    "build:4": "vite build lessons/04-router",
+    "preview:1": "vite preview lessons/01-state",
+    "preview:2": "vite preview lessons/02-context",
+    "preview:3": "vite preview lessons/03-data",
+    "preview:4": "vite preview lessons/04-router",
     "lint": "eslint \"lessons/**/*.tsx\"",
     "render:html": "marp react-development.md -o presentation.html",
     "render:pptx": "marp react-development.md -o presentation.pptx",
@@ -40,6 +41,8 @@
     "vite": "^8.0.14"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.100.14",
+    "@tanstack/react-router": "^1.170.8",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   }
