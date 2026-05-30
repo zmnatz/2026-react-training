@@ -33,7 +33,6 @@ jobs:
       - name: Render Presentation
         run: |
           npm run render:html
-          mv presentation.html index.html
         working-directory: react-intern
 
       - name: Upload artifact

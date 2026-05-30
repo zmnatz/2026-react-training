@@ -18,8 +18,9 @@
     "preview:3": "vite preview lessons/03-data",
     "preview:4": "vite preview lessons/04-router",
     "lint": "eslint \"lessons/**/*.tsx\"",
-    "render:html": "marp react-development.md -o presentation.html",
+    "render:html": "marp react-development.md -o index.html",
     "render:pptx": "marp react-development.md -o presentation.pptx",
+    "dev:marp": "marp --watch react-development.md -o index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

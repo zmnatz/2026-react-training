@@ -1,15 +1,86 @@
 ---
 marp: true
-theme: default
+theme: uncover
 paginate: true
-backgroundColor: #fff
+style: |
+  section {
+    background: #0a192f;
+    color: #ffffff;
+    font-size: clamp(24px, 3vw, 32px);
+    overflow: hidden;
+  }
+  h1 {
+    color: #ffffff;
+    background: #0077b6;
+    display: inline-block;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-size: clamp(40px, 10vw, 70px);
+  }
+  h2, h3 {
+    color: #00b4d8;
+  }
+  p, li {
+    color: #ffffff;
+    overflow-wrap: break-word;
+  }
+  code, pre {
+    font-size: clamp(16px, 1.5vw, 24px);
+    background-color: rgba(0, 119, 182, 0.2);
+    color: #90e0ef;
+    word-break: break-all;
+  }
+  section.two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "left right";
+    gap: 1.2rem 2rem;
+    padding: 70px;
+    align-content: center;
+  }
+
+  section.two-cols > h1,
+  section.two-cols > h2 {
+    grid-area: title;
+    margin-bottom: 0.4rem;
+  }
+
+  section.two-cols > h3:nth-of-type(1) {
+    grid-area: left;
+    margin: 0;
+  }
+
+  section.two-cols > h3:nth-of-type(2) {
+    grid-area: right;
+    margin: 0;
+  }
+
+  section.two-cols > h3:nth-of-type(1) ~ * {
+    grid-column: 1;
+  }
+
+  section.two-cols > h3:nth-of-type(2),
+  section.two-cols > h3:nth-of-type(2) ~ * {
+    grid-column: 2;
+  }
+
+  section.two-cols > h3:nth-of-type(2) ~ h1,
+  section.two-cols > h3:nth-of-type(2) ~ h2 {
+    grid-column: 1 / -1;
+  }
 ---
+
 
 # React Development
 ## A Guide to Modern Web Applications
 ---
 
 # Functional Components
+<!-- _class: two-cols -->
+
+### Concept
 
 Modern React uses **Functional Components** as the primary way to define UI.
 
@@ -17,9 +88,20 @@ Modern React uses **Functional Components** as the primary way to define UI.
 - **Performance**: Lighter than class components.
 - **Hooks**: Allow state and lifecycle management without classes.
 
+### Example
+
 ```jsx
-function Welcome() {
-  return <h1>Hello, React!</h1>;
+import React from 'react';
+
+function Welcome({ name }) {
+  const greeting = `Hello, ${name}!`;
+  
+  return (
+    <div className="welcome-container">
+      <h1>{greeting}</h1>
+      <p>Welcome to the team.</p>
+    </div>
+  );
 }
 ```
 ---
@@ -34,6 +116,8 @@ function Welcome() {
 ### JSX (JavaScript XML)
 - Syntax extension that allows writing HTML-like code in JavaScript.
 - Compiled into `React.createElement()` calls.
+---
+### Core Technologies (continued)
 
 ### Vite
 - Next-generation frontend tooling.
@@ -52,8 +136,13 @@ Hooks are functions that let you "hook into" React state and lifecycle features 
 ---
 
 # useEffect
+<!-- _class: two-cols -->
+
+### Concept
 
 Used for side effects like API calls, subscriptions, or manually changing the DOM.
+
+### Example
 
 ```tsx
 import { useEffect, useState } from 'react';
@@ -76,8 +165,13 @@ function DataFetcher() {
 ---
 
 # useContext
+<!-- _class: two-cols -->
+
+### Concept
 
 Allows sharing state across the component tree without "prop drilling".
+
+### Example
 
 ```tsx
 import { createContext, useContext } from 'react';
@@ -100,8 +194,13 @@ function Toolbar() {
 ---
 
 # useMemo
+<!-- _class: two-cols -->
+
+### Concept
 
 Returns a memoized value. Only recomputes when dependencies change.
+
+### Example
 
 ```tsx
 import { useMemo } from 'react';
@@ -118,8 +217,13 @@ function ExpensiveComponent({ list }) {
 ---
 
 # useCallback
+<!-- _class: two-cols -->
+
+### Concept
 
 Returns a memoized version of a callback function. Prevents unnecessary re-renders of child components.
+
+### Example
 
 ```tsx
 import { useState, useCallback } from 'react';
@@ -142,33 +246,49 @@ const Child = React.memo(({ onClick }) => {
 ---
 
 # Higher-Level Solutions
-
-As applications grow, basic hooks can become verbose.
+<!-- _class: two-cols -->
 
 ### TanStack Query (React Query)
+
 - **Server State Management**: Handles caching, loading, and error states automatically.
 - **Syncing**: Keeps UI in sync with the server.
 
+### Example
+
 ```tsx
-const { data, isLoading } = useQuery({
+const { 
+  data, 
+  isLoading, 
+  isError, 
+  error 
+} = useQuery({
   queryKey: ['todos'],
   queryFn: fetchTodos,
+  staleTime: 5000,
 });
 ```
 ---
 
 # Higher-Level Solutions
+<!-- _class: two-cols -->
 
 ### TanStack Router
+
 - **Type-Safe Routing**: Ensures links and params are typed.
 - **Nested Routing**: Simplifies complex layout hierarchies.
 - **Built-in Loading/Error States**: First-class support for async data loading.
+
+### Example
 
 ```tsx
 const route = createRoute({
   getParentRoute: () => rootRoute,
   path: '/about',
   component: AboutComponent,
+  loader: async () => {
+    const data = await fetchAboutData();
+    return data;
+  },
 });
 ```
 ---
