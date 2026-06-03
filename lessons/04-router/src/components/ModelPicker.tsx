@@ -1,5 +1,5 @@
-import { useChatModel } from '../state/chat';
 import { useModels } from '../hooks/useModels';
+import { useChatModel } from '../state/app';
 
 export default function ModelPicker() {
   const [model, setModel] = useChatModel();

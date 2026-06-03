@@ -9,6 +9,10 @@ export const Route = createRoute({
   path: '/',
   component: () => (
     <div className="app-container">
+      <header className="header">
+        <img src="/logo.png" alt="Logo" className="logo" />
+        <div className="brand-name">Jimbot 2.0: your highly trained AI Bot</div>
+      </header>
       <ModelPicker />
       <div className="chat-area">
         <ChatMessages />

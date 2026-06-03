@@ -21,7 +21,7 @@ export default function ChatInput({ onSend }: ChatInputProps) {
       className="chat-input-form"
     >
       <input 
-        type="text" 
+        type="text" autoFocus 
         value={text} 
         onChange={(e) => setText(e.target.value)} 
         placeholder="Type a message..." 

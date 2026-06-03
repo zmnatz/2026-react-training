@@ -1,6 +1,6 @@
 import { SubmitEvent, useState } from 'react';
 import { useChatMutation } from '../hooks/useChatMutation';
-import { useChatModel } from '../state/chat';
+import { useChatModel } from '../state/app';
 
 export default function ChatInput() {
   const [text, setText] = useState('');
@@ -21,7 +21,7 @@ export default function ChatInput() {
       className="chat-input-form"
     >
       <input 
-        type="text" 
+        type="text" autoFocus 
         value={text} 
         onChange={(e) => setText(e.target.value)} 
         placeholder={isSending ? "Sending..." : "Type a message..."} 

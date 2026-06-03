@@ -18,7 +18,7 @@ export default function ChatInput({ onSend }: ChatInputProps) {
       className="chat-input-form"
     >
       <input 
-        type="text" 
+        type="text" autoFocus 
         // TODO: Link the input element to the state
         placeholder="Type a message..." 
         className="chat-input"
