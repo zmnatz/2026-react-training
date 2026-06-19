@@ -2,180 +2,124 @@
 marp: true
 theme: uncover
 paginate: true
+header: '![w:100](https://www.visionistinc.com/wp-content/uploads/2022/08/logo-white.svg)'
 style: |
-  section {
-    background: #0a192f;
-    color: #ffffff;
-    font-size: clamp(24px, 3vw, 32px);
-    overflow: hidden;
-  }
-  h1 {
-    color: #ffffff;
-    background: #0077b6;
-    display: inline-block;
-    padding: 0 20px;
-    border-radius: 10px;
-    font-size: clamp(40px, 10vw, 70px);
-  }
-  h2, h3 {
-    color: #00b4d8;
-  }
-  p, li {
-    color: #ffffff;
-    overflow-wrap: break-word;
-  }
-  code, pre {
-    font-size: clamp(16px, 1.5vw, 24px);
-    background-color: rgba(0, 119, 182, 0.2);
-    color: #90e0ef;
-    word-break: break-all;
-  }
-  section.two-cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "title title"
-      "left right";
-    gap: 1.2rem 2rem;
-    padding: 70px;
-    align-content: center;
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Raleway:wght@100;200;300&display=swap');
+
+  :root {
+    --accent: #00a8e8; --accent-hover: #0077b6;
+    --dark: #050a14; --card: #0a1628; --border: #1a2a44;
+    --body: #a0aec0; --label: #00f2ff; --muted: #4a5568; --light: #ffffff;
+    --green: #22c55e; --red: #ef4444; --yellow: #f5a623;
   }
 
-  section.two-cols > h1,
-  section.two-cols > h2 {
-    grid-area: title;
-    margin-bottom: 0.4rem;
-  }
+  section { background: var(--dark); color: var(--light); font-family: 'Raleway', sans-serif; font-weight: 200; padding: 56px 72px; }
+  h1 { font-family: 'Outfit'; font-weight: 800; font-size: 3em; color: var(--light); margin: 0; }
+  h2 { font-family: 'Raleway'; font-weight: 100; font-size: 1.5em; color: var(--accent); margin: 0; }
+  h3 { font-family: 'Outfit'; font-weight: 600; font-size: 1em; color: var(--label); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+  strong { color: var(--light); font-weight: 600; }
 
-  section.two-cols > h3:nth-of-type(1) {
-    grid-area: left;
-    margin: 0;
-  }
+  p, li { color: var(--body); font-size: 0.8em; line-height: 1.3; }
+  code, pre { font-size: 0.6em; background-color: var(--card); color: #90e0ef; border-radius: 6px; overflow-x: auto; }
 
-  section.two-cols > h3:nth-of-type(2) {
-    grid-area: right;
-    margin: 0;
-  }
+  section.lead { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+  section.split { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; gap: 1rem 2rem; align-items: center; padding: 30px 40px; }
+  section.split > h3 { grid-column: 1 / span 2; margin-bottom: 0.5rem; }
 
-  section.two-cols > h3:nth-of-type(1) ~ * {
-    grid-column: 1;
-  }
+  .col { display: flex; flex-direction: column; justify-content: center; }
+  .graphic-col { display: flex; justify-content: center; align-items: center; }
+  .graphic-col img { max-width: 100%; max-height: 300px; }
 
-  section.two-cols > h3:nth-of-type(2),
-  section.two-cols > h3:nth-of-type(2) ~ * {
-    grid-column: 2;
-  }
-
-  section.two-cols > h3:nth-of-type(2) ~ h1,
-  section.two-cols > h3:nth-of-type(2) ~ h2 {
-    grid-column: 1 / -1;
-  }
+  section { overflow: hidden; }
+  header { text-align: left; }
 ---
 
+<!-- _class: lead -->
+<!-- _header: '' -->
 
 # React Development
 ## A Guide to Modern Web Applications
+
+![w:300](https://www.visionistinc.com/wp-content/uploads/2022/08/logo-white.svg)
+
 ---
 
-# Functional Components
-<!-- _class: two-cols -->
+<!-- _class: split -->
 
 ### Concept
 
+<div class="col">
+
 Modern React uses **Functional Components** as the primary way to define UI.
 
-- **Simplicity**: Just JavaScript functions that return JSX.
-- **Performance**: Lighter than class components.
-- **Hooks**: Allow state and lifecycle management without classes.
+- **Simplicity**: Just JavaScript functions.
+- **Performance**: Lighter than classes.
+- **Hooks**: Lifecycle management.
 
-### Example
+</div>
+<div class="graphic-col"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='220' viewBox='0 0 100 220'><rect x='5' y='5' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300a8e8' stroke-width='2'/><path d='M30 25 L70 25' stroke='%2300a8e8' stroke-width='1'/><text x='50' y='30' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Props</text><path d='M50 45 L50 75' stroke='%2300a8e8' stroke-width='2' fill='none'/><polyline points='45 70 50 75 55 70' stroke='%2300a8e8' stroke-width='2' fill='none'/><rect x='5' y='80' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300a8e8' stroke-width='2'/><text x='50' y='105' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Func</text><path d='M50 120 L50 150' stroke='%2300a8e8' stroke-width='2' fill='none'/><polyline points='45 145 50 150 55 145' stroke='%2300a8e8' stroke-width='2' fill='none'/><rect x='5' y='155' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300a8e8' stroke-width='2'/><text x='50' y='180' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>UI</text></svg>"/></div>
 
-```jsx
-import React from 'react';
-
-function Welcome({ name }) {
-  const greeting = `Hello, ${name}!`;
-  
-  return (
-    <div className="welcome-container">
-      <h1>{greeting}</h1>
-      <p>Welcome to the team.</p>
-    </div>
-  );
-}
-```
 ---
 
-# Core Technologies
+<!-- _class: split -->
 
-### TypeScript
-- Adds static typing to JavaScript.
-- Catches errors at compile time.
-- Improves developer experience (DX) with better autocomplete.
+### Core Technologies
 
-### JSX (JavaScript XML)
-- Syntax extension that allows writing HTML-like code in JavaScript.
-- Compiled into `React.createElement()` calls.
----
-### Core Technologies (continued)
+<div class="graphic-col"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='220' viewBox='0 0 100 220'><rect x='5' y='5' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300f2ff' stroke-width='2'/><text x='50' y='30' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>TS/JSX</text><path d='M50 45 L50 75' stroke='%2300f2ff' stroke-width='2' fill='none'/><polyline points='45 70 50 75 55 70' stroke='%2300f2ff' stroke-width='2' fill='none'/><rect x='5' y='80' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300f2ff' stroke-width='2'/><text x='50' y='105' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Vite</text><path d='M50 120 L50 150' stroke='%2300f2ff' stroke-width='2' fill='none'/><polyline points='45 145 50 150 55 145' stroke='%2300f2ff' stroke-width='2' fill='none'/><rect x='5' y='155' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300f2ff' stroke-width='2'/><text x='50' y='180' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>App</text></svg>"/></div>
+<div class="col">
 
-### Vite
-- Next-generation frontend tooling.
-- Extremely fast Cold Start and Hot Module Replacement (HMR).
-- Replaces Create React App (CRA).
+- **TypeScript**: Static typing for reliability.
+- **JSX**: HTML-like syntax in JS.
+- **Vite**: Ultra-fast development tooling.
+
+</div>
+
 ---
 
 # React Hooks
 
 Hooks are functions that let you "hook into" React state and lifecycle features from functional components.
 
-- **useState**: Manages local component state.
+- **useState**: Manages local state.
 - **useEffect**: Handles side effects.
 - **useContext**: Accesses global state.
-- **useMemo / useCallback**: Performance optimization.
+- **useMemo / useCallback**: Optimization.
+
 ---
 
-# useEffect
-<!-- _class: two-cols -->
+<!-- _class: split -->
 
-### Concept
+### useEffect
 
-Used for side effects like API calls, subscriptions, or manually changing the DOM.
+<div class="col">
 
-### Example
+Used for side effects like API calls or manual DOM changes.
 
 ```tsx
-import { useEffect, useState } from 'react';
-
-function DataFetcher() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch('https://api.example.com/data')
-      .then(res => res.json())
-      .then(setData);
-      
-    // Optional: cleanup function
-    return () => console.log('Cleaning up...');
-  }, []); // Empty array = runs once on mount
-
-  return <div>{data ? JSON.stringify(data) : 'Loading...'}</div>;
-}
+useEffect(() => {
+  fetch('https://api.example.com/data')
+    .then(res => res.json())
+    .then(setData);
+    
+  return () => console.log('Cleanup');
+}, []); 
 ```
+
+</div>
+<div class="graphic-col"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='220' viewBox='0 0 100 220'><rect x='5' y='5' width='90' height='40' rx='4' fill='%230a1628' stroke='%23f5a623' stroke-width='2'/><text x='50' y='30' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Change</text><path d='M50 45 L50 75' stroke='%23f5a623' stroke-width='2' fill='none'/><polyline points='45 70 50 75 55 70' stroke='%23f5a623' stroke-width='2' fill='none'/><rect x='5' y='80' width='90' height='40' rx='4' fill='%230a1628' stroke='%23f5a623' stroke-width='2'/><text x='50' y='105' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Effect</text><path d='M50 120 L50 150' stroke='%23f5a623' stroke-width='2' fill='none'/><polyline points='45 145 50 150 55 145' stroke='%23f5a623' stroke-width='2' fill='none'/><rect x='5' y='155' width='90' height='40' rx='4' fill='%230a1628' stroke='%23f5a623' stroke-width='2'/><text x='50' y='180' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Cleanup</text></svg>"/></div>
+
 ---
 
-# useContext
-<!-- _class: two-cols -->
+<!-- _class: split -->
 
-### Concept
+### useContext
 
-Allows sharing state across the component tree without "prop drilling".
+<div class="graphic-col"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='220' viewBox='0 0 100 220'><rect x='5' y='5' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300a8e8' stroke-width='2'/><text x='50' y='30' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Provider</text><path d='M50 45 L50 75' stroke='%2300a8e8' stroke-width='2' fill='none'/><polyline points='45 70 50 75 55 70' stroke='%2300a8e8' stroke-width='2' fill='none'/><rect x='5' y='80' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300a8e8' stroke-width='2'/><text x='50' y='105' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>State</text><path d='M50 120 L50 150' stroke='%2300a8e8' stroke-width='2' fill='none'/><polyline points='45 145 50 150 55 145' stroke='%2300a8e8' stroke-width='2' fill='none'/><rect x='5' y='155' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300a8e8' stroke-width='2'/><text x='50' y='180' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>UI</text></svg>"/></div>
+<div class="col">
 
-### Example
+Allows sharing state across the tree without "prop drilling".
 
 ```tsx
-import { createContext, useContext } from 'react';
-
 const ThemeContext = createContext('light');
 
 function App() {
@@ -185,112 +129,89 @@ function App() {
     </ThemeContext.Provider>
   );
 }
-
-function Toolbar() {
-  const theme = useContext(ThemeContext);
-  return <div>Current theme: {theme}</div>;
-}
 ```
+
+</div>
+
 ---
 
-# useMemo
-<!-- _class: two-cols -->
+<!-- _class: split -->
 
-### Concept
+### useMemo
+
+<div class="col">
 
 Returns a memoized value. Only recomputes when dependencies change.
 
-### Example
-
 ```tsx
-import { useMemo } from 'react';
-
-function ExpensiveComponent({ list }) {
-  const sortedList = useMemo(() => {
-    console.log('Sorting list...');
-    return [...list].sort();
-  }, [list]);
-
-  return <ul>{sortedList.map(item => <li key={item}>{item}</li>)}</ul>;
-}
+const sortedList = useMemo(() => {
+  return [...list].sort();
+}, [list]);
 ```
+
+</div>
+<div class="graphic-col"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='220' viewBox='0 0 100 220'><rect x='5' y='5' width='90' height='40' rx='4' fill='%230a1628' stroke='%2322c55e' stroke-width='2'/><text x='50' y='30' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Input</text><path d='M50 45 L50 75' stroke='%2322c55e' stroke-width='2' fill='none'/><polyline points='45 70 50 75 55 70' stroke='%2322c55e' stroke-width='2' fill='none'/><rect x='5' y='80' width='90' height='40' rx='4' fill='%230a1628' stroke='%2322c55e' stroke-width='2'/><text x='50' y='105' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Compute</text><path d='M50 120 L50 150' stroke='%2322c55e' stroke-width='2' fill='none'/><polyline points='45 145 50 150 55 145' stroke='%2322c55e' stroke-width='2' fill='none'/><rect x='5' y='155' width='90' height='40' rx='4' fill='%230a1628' stroke='%2322c55e' stroke-width='2'/><text x='50' y='180' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Memo</text></svg>"/></div>
+
 ---
 
-# useCallback
-<!-- _class: two-cols -->
+<!-- _class: split -->
 
-### Concept
+### useCallback
 
-Returns a memoized version of a callback function. Prevents unnecessary re-renders of child components.
+<div class="graphic-col"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='220' viewBox='0 0 100 220'><rect x='5' y='5' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300a8e8' stroke-width='2'/><text x='50' y='30' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Deps</text><path d='M50 45 L50 75' stroke='%2300a8e8' stroke-width='2' fill='none'/><polyline points='45 70 50 75 55 70' stroke='%2300a8e8' stroke-width='2' fill='none'/><rect x='5' y='80' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300a8e8' stroke-width='2'/><text x='50' y='105' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Fn</text><path d='M50 120 L50 150' stroke='%2300a8e8' stroke-width='2' fill='none'/><polyline points='45 145 50 150 55 145' stroke='%2300a8e8' stroke-width='2' fill='none'/><rect x='5' y='155' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300a8e8' stroke-width='2'/><text x='50' y='180' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Stable</text></svg>"/></div>
+<div class="col">
 
-### Example
+Returns a memoized version of a callback function.
 
 ```tsx
-import { useState, useCallback } from 'react';
-
-function Parent() {
-  const [count, setCount] = useState(0);
-
-  const handleClick = useCallback(() => {
-    console.log('Button clicked!');
-  }, []); // Function identity stays the same
-
-  return <Child onClick={handleClick} />;
-}
-
-const Child = React.memo(({ onClick }) => {
-  console.log('Child rendered');
-  return <button onClick={onClick}>Click me</button>;
-});
+const handleClick = useCallback(() => {
+  console.log('Clicked!');
+}, []);
 ```
+
+</div>
+
 ---
 
-# Higher-Level Solutions
-<!-- _class: two-cols -->
+<!-- _class: split -->
 
-### TanStack Query (React Query)
+### TanStack Query
 
-- **Server State Management**: Handles caching, loading, and error states automatically.
-- **Syncing**: Keeps UI in sync with the server.
+<div class="col">
 
-### Example
+Handles caching, loading, and error states automatically.
 
 ```tsx
-const { 
-  data, 
-  isLoading, 
-  isError, 
-  error 
-} = useQuery({
+const { data, isLoading } = useQuery({
   queryKey: ['todos'],
   queryFn: fetchTodos,
-  staleTime: 5000,
 });
 ```
+
+</div>
+<div class="graphic-col"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='220' viewBox='0 0 100 220'><rect x='5' y='5' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300f2ff' stroke-width='2'/><text x='50' y='30' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Query</text><path d='M50 45 L50 75' stroke='%2300f2ff' stroke-width='2' fill='none'/><polyline points='45 70 50 75 55 70' stroke='%2300f2ff' stroke-width='2' fill='none'/><rect x='5' y='80' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300f2ff' stroke-width='2'/><text x='50' y='105' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Fetch</text><path d='M50 120 L50 150' stroke='%2300f2ff' stroke-width='2' fill='none'/><polyline points='45 145 50 150 55 145' stroke='%2300f2ff' stroke-width='2' fill='none'/><rect x='5' y='155' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300f2ff' stroke-width='2'/><text x='50' y='180' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Cache</text></svg>"/></div>
+
 ---
 
-# Higher-Level Solutions
-<!-- _class: two-cols -->
+<!-- _class: split -->
 
 ### TanStack Router
 
-- **Type-Safe Routing**: Ensures links and params are typed.
-- **Nested Routing**: Simplifies complex layout hierarchies.
-- **Built-in Loading/Error States**: First-class support for async data loading.
+<div class="graphic-col"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='220' viewBox='0 0 100 220'><rect x='5' y='5' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300a8e8' stroke-width='2'/><text x='50' y='30' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>URL</text><path d='M50 45 L50 75' stroke='%2300a8e8' stroke-width='2' fill='none'/><polyline points='45 70 50 75 55 70' stroke='%2300a8e8' stroke-width='2' fill='none'/><rect x='5' y='80' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300a8e8' stroke-width='2'/><text x='50' y='105' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>Match</text><path d='M50 120 L50 150' stroke='%2300a8e8' stroke-width='2' fill='none'/><polyline points='45 145 50 150 55 145' stroke='%2300a8e8' stroke-width='2' fill='none'/><rect x='5' y='155' width='90' height='40' rx='4' fill='%230a1628' stroke='%2300a8e8' stroke-width='2'/><text x='50' y='180' font-family='Arial' font-size='10' fill='%23ffffff' text-anchor='middle'>View</text></svg>"/></div>
+<div class="col">
 
-### Example
+Type-safe routing and nested layouts.
 
 ```tsx
 const route = createRoute({
   getParentRoute: () => rootRoute,
   path: '/about',
   component: AboutComponent,
-  loader: async () => {
-    const data = await fetchAboutData();
-    return data;
-  },
 });
 ```
+
+</div>
+
 ---
 
 # Summary
@@ -299,3 +220,4 @@ const route = createRoute({
 - **TS** + **JSX** + **Vite** = Optimal Tooling.
 - Use **useMemo/useCallback** for performance.
 - Use **TanStack** tools for professional state and routing management.
+```
