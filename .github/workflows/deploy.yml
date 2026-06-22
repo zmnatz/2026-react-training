@@ -24,21 +24,17 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: react-intern/package-lock.json
 
       - name: Install dependencies
         run: npm install
-        working-directory: react-intern
 
       - name: Render Presentation
-        run: |
-          npm run render:html
-        working-directory: react-intern
+        run: npm run render:html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: react-intern/
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment
