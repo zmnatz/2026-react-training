@@ -1,4 +1,4 @@
-const models = ['gpt-4', 'gpt-3.5-turbo', 'claude-3-opus', 'llama-3'];
+import { AI_MODELS as models } from '../../../common/shared';
 
 interface ModelPickerProps {
   selectedModel: string;

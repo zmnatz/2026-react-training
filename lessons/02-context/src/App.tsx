@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ModelPicker from './components/ModelPicker';
-import ChatMessages from './components/ChatMessages';
-import ChatInput from './components/ChatInput';
+import ChatArea from './components/ChatArea';
+import { Header } from '../../common/components';
 import { AppProvider } from './state/AppContext';
 import '../../common/style.css';
 
@@ -23,16 +23,10 @@ export default function App() {
   return (
     <div className="app-container">
       {/* TODO: Wrap with AppProvider */}
-      <header className="header">
-        <img src="/logo.png" alt="Logo" className="logo" />
-        <div className="brand-name">Jimbot 2.0: your highly trained AI Bot</div>
-      </header>
+      <Header />
       <ModelPicker selectedModel={model} onModelChange={setModel} />
-      <div className="chat-area">
-        {/* TODO: Remove parameters, reference the App context in ChatMessages and ChatInput */}
-        <ChatMessages messages={messages} />
-        <ChatInput onSend={handleSend} />
-      </div>
+      {/* TODO: Remove these props — Components should read from AppContext instead of having state drilled through props */}
+      <ChatArea messages={messages} onSend={handleSend} />
       {/* TODO: Wrap with AppProvider */}
     </div>
   );

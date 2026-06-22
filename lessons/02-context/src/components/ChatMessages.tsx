@@ -1,20 +1,16 @@
-interface Message {
-  role: 'user' | 'assistant';
-  content: string;
-}
+import { Message } from '../../../common/shared';
+import { EmptyState } from '../../../common/components';
 
+// TODO: No props needed
 interface ChatMessagesProps {
   messages: Message[];
 }
 
 export default function ChatMessages({ messages }: ChatMessagesProps) {
+  // TODO: Retrieve message list from AppContext (remove the prop)
+
   if (messages.length === 0) {
-    return (
-      <div className="empty-state">
-        <img src="/logo.png" alt="Logo" className="empty-state-logo" />
-        <div className="empty-state-text">Jimbot 2.0: your highly trained AI Bot</div>
-      </div>
-    );
+    return <EmptyState />;
   }
 
   return (

@@ -1,7 +1,5 @@
-interface Message {
-  role: 'user' | 'assistant';
-  content: string;
-}
+import { Message } from '../../../common/shared';
+import { EmptyState } from '../../../common/components';
 
 interface ChatMessagesProps {
   messages: Message[];
@@ -9,12 +7,7 @@ interface ChatMessagesProps {
 
 export default function ChatMessages({ messages }: ChatMessagesProps) {
   if (messages.length === 0) {
-    return (
-      <div className="empty-state">
-        <img src="/logo.png" alt="Logo" className="empty-state-logo" />
-        <div className="empty-state-text">Jimbot 2.0: your highly trained AI Bot</div>
-      </div>
-    );
+    return <EmptyState />;
   }
 
   return (

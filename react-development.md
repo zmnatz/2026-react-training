@@ -50,6 +50,7 @@ A high-level tour of front-end concepts and terms — enough to recognize them w
 
 - **Is**: A map of the landscape and its vocabulary.
 - **Is**: A foundation for what to search for next.
+- **Isn't**: A lesson on HTML and CSS. We can nerd out on that later.
 - **Isn't**: A deep dive — each topic here has far more depth than we can cover today.
 - **Isn't**: A replacement for hands-on practice.
 

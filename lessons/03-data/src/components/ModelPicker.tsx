@@ -1,6 +1,7 @@
-import { useChatModel } from '../state/chat';
+import { useChatModel } from '../state/AppContext';
+import { AI_MODELS as models } from '../../../common/shared';
 
-const models = ['gpt-4', 'gpt-3.5-turbo', 'claude-3-opus', 'llama-3'];
+// TODO: Replace this static list with `const { data: models = [] } = useModels();`
 
 export default function ModelPicker() {
   const [model, setModel] = useChatModel();

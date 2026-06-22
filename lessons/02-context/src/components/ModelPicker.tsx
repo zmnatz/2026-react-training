@@ -1,11 +1,14 @@
-const models = ['gpt-4', 'gpt-3.5-turbo', 'claude-3-opus', 'llama-3'];
+import { AI_MODELS as models } from '../../../common/shared';
 
+// TODO: No props needed
 interface ModelPickerProps {
   selectedModel: string;
   onModelChange: (model: string) => void;
 }
 
 export default function ModelPicker({ selectedModel, onModelChange }: ModelPickerProps) {
+  // TODO: Retrieve model and setModel from AppContext (remove the props)
+
   return (
     <div className="model-picker">
       <label htmlFor="model-select">Model:</label>

@@ -1,10 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
 
-export interface Message {
-  role: 'user' | 'assistant';
-  content: string;
-}
-
 export interface AppContextType {
   model: string;
   setModel: (model: string) => void;

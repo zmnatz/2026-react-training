@@ -1,14 +1,16 @@
 import { useState, SubmitEvent } from 'react';
-import { useChatActions } from '../state/chat';
+import { useChatModel } from '../state/AppContext';
+// TODO: Import useChatMutation from '../hooks/useChatMutation' once you've implemented it
 
 export default function ChatInput() {
   const [text, setText] = useState('');
-  const { sendMessage } = useChatActions();
+  const [model] = useChatModel();
+  // TODO: Replace this with `const { mutate: sendMessage, isPending } = useChatMutation(model);`
 
   const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (text.trim()) {
-      sendMessage(text);
+      // TODO: Call the mutation here instead, e.g. sendMessage({ text })
       setText('');
     }
   };

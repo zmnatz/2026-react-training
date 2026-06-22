@@ -1,6 +1,6 @@
 import { SubmitEvent, useState } from 'react';
-import { useChatMutation } from '../hooks/useChatMutation';
-import { useChatModel } from '../state/app';
+import { useChatMutation } from '../data';
+import { useChatModel } from '../state/AppContext';
 
 export default function ChatInput() {
   const [text, setText] = useState('');

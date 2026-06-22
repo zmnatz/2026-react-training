@@ -1,9 +1,5 @@
 import React, { createContext } from 'react';
-
-export interface Message {
-  role: 'user' | 'assistant';
-  content: string;
-}
+import { Message } from '../../../common/shared';
 
 // Define the shape of the data you want to share globally
 export interface AppContextType {

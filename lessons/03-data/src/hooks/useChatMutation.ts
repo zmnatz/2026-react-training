@@ -1,4 +1,4 @@
-// Implement the useChatMutation hook here.
+// TODO: Implement the useChatMutation hook here.
 //
 // Hint: Use `useMutation` from '@tanstack/react-query' to handle sending chat messages.
 // `useMutation` is used for operations that create, update, or delete data (write operations).

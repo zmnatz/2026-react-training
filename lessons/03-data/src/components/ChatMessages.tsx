@@ -1,15 +1,12 @@
-import { useChatMessages } from "../state/AppContext";
+import { Message } from '../../../common/shared';
+import { EmptyState } from '../../../common/components';
 
 export default function ChatMessages() {
-  const messages = useChatMessages();
+  // TODO: Replace this with `const { data: messages = [] } = useMessages();` from '../hooks/useMessages'
+  const messages: Message[] = [];
 
   if (messages.length === 0) {
-    return (
-      <div className="empty-state">
-        <img src="/logo.png" alt="Logo" className="empty-state-logo" />
-        <div className="empty-state-text">Jimbot 2.0: your highly trained AI Bot</div>
-      </div>
-    );
+    return <EmptyState />;
   }
 
   return (
