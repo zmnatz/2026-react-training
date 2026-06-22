@@ -1,14 +1,15 @@
-# Lesson 4: Router Guidance
-**Goal:** Implement navigation and routing using TanStack Router.
+# Lesson 4: Final Product Guidance
+
+**Goal:** Read and understand a finished, fully-integrated application — not build one.
+
+This lesson has no tasks and no `TODO`s. It's the reference solution showing how state, context, and data fetching from Lessons 1-3 combine into one app.
 
 ## Key Concepts for AI Assistance
-- **SPA Routing:** Explain the concept of changing URLs without full page reloads.
-- **Route Tree:** Guide the student in setting up a root route and nesting child routes.
-- **`<Link>` Component:** Prompt the student to use the router's `Link` instead of `<a>` tags.
-- **`<Outlet />`:** Explain how the Outlet acts as a placeholder for nested routes.
-- **Route Parameters/Pages:** Assist in creating specific pages like `/admin`.
+- **Global App State:** Explain how settings are consolidated into a single `AppContext` instead of several separate ones.
+- **State Sync:** Point out how state set in one part of the app (e.g. the model picker) flows to others that read from the same context.
+- **Custom Hooks:** Walk through how `useMessages`, `useChatMutation`, and `useModels` wrap TanStack Query so components stay simple.
+- **Architecture:** Discuss why hooks, state, and components are organized into separate folders.
 
 ## Guidance Strategy
-- Do NOT provide the route tree configuration.
-- ASK: "We want a separate settings page. How can we tell the application to render a different component when the URL is `/admin`?"
-- ASK: "Where should the navigation menu go so that it stays visible regardless of which page the user is on?"
+- This is a read-and-explain lesson — there is nothing for the student to build.
+- If asked "why is it structured this way," compare it back to the patterns from Lessons 1-3 (state, context, data).

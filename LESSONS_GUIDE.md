@@ -31,21 +31,10 @@ This document provides a set of skills and concepts for each lesson. These shoul
 - **`useMutation`:** Handling data modifications and using lifecycle callbacks like `onMutate` and `onSuccess`.
 - **Cache Manipulation:** Using `queryClient.setQueryData` for optimistic updates to make the UI feel instantaneous.
 
-## Lesson 4: Router
-**Goal:** Implement navigation and routing using TanStack Router.
+## Lesson 4: Final Product
+**Goal:** Read and understand a finished, fully-integrated application — there are no tasks to implement.
 
 **Key Skills/Concepts:**
-- **SPA Routing:** Understanding how to change the URL without reloading the page.
-- **Route Tree:** Configuring a root route and nesting child routes.
-- **`<Link>` vs `<a>`:** Using router-specific links to prevent full page reloads.
-- **`<Outlet />`:** Implementing a placeholder for child route components.
-- **Admin Pages:** Designing a separate route for application settings.
-
-## Lesson 5: Final Product
-**Goal:** Integrate all previous concepts into a cohesive application.
-
-**Key Skills/Concepts:**
-- **Global App State:** Consolidating various contexts into a single `AppContext` for application-wide settings (theme, model).
-- **State Synchronization:** Ensuring settings changed in the admin route are reflected in the chat route.
-- **Theming:** Implementing a dynamic theme (light/dark) using CSS classes driven by global state.
-- **Project Architecture:** Organizing hooks, state, and routes for a maintainable codebase.
+- **Global App State:** Consolidating shared state (e.g. the selected model) into a single `AppContext`.
+- **Custom Hooks:** Seeing how `useMessages`, `useChatMutation`, and `useModels` wrap TanStack Query so components stay simple.
+- **Project Architecture:** Organizing hooks, state, and components into a maintainable folder structure.

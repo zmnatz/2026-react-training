@@ -1,10 +1,9 @@
-# Lesson 4: Router
-In this lesson, you will learn how to implement routing in a React application using TanStack Router.
+# Lesson 4: Final Product
 
-## Tasks
-1. Install and configure `@tanstack/react-router`.
-2. Set up the route tree to handle the main chat interface.
-3. Create a new `/admin` route.
-4. Implement an admin page that allows configuring application settings, such as light/dark mode and model selection.
-5. Ensure the user can navigate between the chat and admin pages.
+This isn't an exercise — it's the finished, fully-integrated app. There are no `TODO`s and nothing to implement here.
 
+Read through it as a reference for how the pieces from Lessons 1-3 (state, context, and data fetching) come together in one cohesive application:
+
+- A single `AppContext` consolidating app-wide settings.
+- Custom hooks (`useMessages`, `useChatMutation`, `useModels`) wrapping TanStack Query for data fetching.
+- Components composed from that shared state instead of prop drilling.

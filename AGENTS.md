@@ -17,11 +17,10 @@ Lessons are numbered. Use the corresponding script to run, build, or preview a l
 ## Development Workflow
 1. Each lesson usually contains a `src/App.tsx` which serves as the entry point.
 2. Some lessons are partially implemented with `// TODO` comments indicating where code needs to be written.
-3. The goal of the lessons is to practice specific React concepts (state, context, data fetching, routing).
+3. The goal of the lessons is to practice specific React concepts (state, context, data fetching), then study how they come together in the final lesson.
 
 ## Technologies
 - **React 19**
 - **TypeScript**
 - **Vite**
 - **TanStack Query** (used in data fetching lessons)
-- **TanStack Router** (used in routing lessons)

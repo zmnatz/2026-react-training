@@ -385,5 +385,4 @@ Each lesson is a standalone app in `lessons/` — run with `npm run dev:<n>`.
 - **01 · State**: Local state with `useState`.
 - **02 · Context**: Solve prop drilling with `useContext`.
 - **03 · Data**: Async data with TanStack Query.
-- **04 · Router**: Navigation with TanStack Router.
-- **05 · Final**: Put it all together.
+- **04 · Final**: A finished reference app — read, don't build.
