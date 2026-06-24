@@ -1,11 +1,12 @@
-import { useModels } from '../data';
+import { useModels } from '../hooks/useModels';
 import { useChatModel } from '../state/AppContext';
 
 export default function ModelPicker() {
   const [model, setModel] = useChatModel();
-  const { data: models = [], isLoading } = useModels();
+  const { data: models = [], isLoading, isError, error } = useModels();
 
   if (isLoading) return <div>Loading models...</div>;
+  if (isError) return <div className="error-message">Failed to load models: {error.message}</div>;
 
   return (
     <div className="model-picker">

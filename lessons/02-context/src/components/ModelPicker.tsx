@@ -1,4 +1,5 @@
-import { AI_MODELS as models } from '../../../common/shared';
+import { useEffect, useState } from 'react';
+import { fetchModels } from '../api';
 
 // TODO: No props needed
 interface ModelPickerProps {
@@ -7,7 +8,12 @@ interface ModelPickerProps {
 }
 
 export default function ModelPicker({ selectedModel, onModelChange }: ModelPickerProps) {
-  // TODO: Retrieve model and setModel from AppContext (remove the props)
+  // TODO: Use the useChatModel hook from '../state/AppContext' to get the active model and its setter (remove the props)
+  const [models, setModels] = useState<string[]>([]);
+
+  useEffect(() => {
+    fetchModels().then(setModels);
+  }, []);
 
   return (
     <div className="model-picker">

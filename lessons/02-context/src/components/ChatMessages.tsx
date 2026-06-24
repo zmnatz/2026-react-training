@@ -7,7 +7,7 @@ interface ChatMessagesProps {
 }
 
 export default function ChatMessages({ messages }: ChatMessagesProps) {
-  // TODO: Retrieve message list from AppContext (remove the prop)
+  // TODO: Use the useChatMessages hook from '../state/AppContext' to get the message list (remove the prop)
 
   if (messages.length === 0) {
     return <EmptyState />;

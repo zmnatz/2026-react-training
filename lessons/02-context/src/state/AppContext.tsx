@@ -15,7 +15,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   // TODO: Model state goes here
   // TODO: Message state goes here
 
-  // TODO: Define callback function for sending a message
+  // TODO: Define a callback for sending a message — reuse the same simulated-API
+  // approach as Lesson 1 (call the API helper with the text and active model, then
+  // update message state once the reply comes back)
 
   //   <AppContext.Provider value={{ context goes here }}>
   //     {children}
@@ -23,3 +25,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
   // );
 }
+
+// TODO: Define and export three hooks here — useChatModel, useChatMessages, and
+// useChatActions. Each should read from this context (throwing the same "must be
+// used within an AppProvider" error if it's missing — see Lesson 3/4's AppContext for
+// the pattern) and return only the slice of state or behavior its name implies.

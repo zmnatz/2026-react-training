@@ -5,10 +5,12 @@ export interface AppContextType {
   setModel: (model: string) => void;
 }
 
+const DEFAULT_MODEL = 'gemma-4-26b-a4b-it';
+
 export const AppContext = createContext<AppContextType | null>(null);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
-  const [model, setModel] = useState<string>('gpt-4');
+  const [model, setModel] = useState<string>(DEFAULT_MODEL);
 
   return (
     <AppContext.Provider value={{ model, setModel }}>

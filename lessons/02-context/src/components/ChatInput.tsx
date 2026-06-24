@@ -7,7 +7,7 @@ interface ChatInputProps {
 
 export default function ChatInput({ onSend }: ChatInputProps) {
   const [text, setText] = useState('');
-  // TODO: Retrieve the callback to send a message from context (remove the prop)
+  // TODO: Use the useChatActions hook from '../state/AppContext' to get the send-message function (remove the prop)
 
   const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();

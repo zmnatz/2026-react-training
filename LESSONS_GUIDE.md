@@ -38,3 +38,4 @@ This document provides a set of skills and concepts for each lesson. These shoul
 - **Global App State:** Consolidating shared state (e.g. the selected model) into a single `AppContext`.
 - **Custom Hooks:** Seeing how `useMessages`, `useChatMutation`, and `useModels` wrap TanStack Query so components stay simple.
 - **Project Architecture:** Organizing hooks, state, and components into a maintainable folder structure.
+- **Real API Integration:** Unlike Lesson 3's simulated calls, `src/api.ts` calls a live model provider through the shared OpenAI-compatible client to list models and run chat inference.

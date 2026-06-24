@@ -1,7 +1,7 @@
 import { useChatModel } from '../state/AppContext';
 import { AI_MODELS as models } from '../../../common/shared';
 
-// TODO: Replace this static list with `const { data: models = [] } = useModels();`
+// TODO: Replace this static list by reading from the useModels hook instead, falling back to an empty array while it loads
 
 export default function ModelPicker() {
   const [model, setModel] = useChatModel();

@@ -2,7 +2,7 @@ import { Message } from '../../../common/shared';
 import { EmptyState } from '../../../common/components';
 
 export default function ChatMessages() {
-  // TODO: Replace this with `const { data: messages = [] } = useMessages();` from '../hooks/useMessages'
+  // TODO: Replace this by reading from the useMessages hook (in '../hooks/useMessages') instead, falling back to an empty array while it loads
   const messages: Message[] = [];
 
   if (messages.length === 0) {

@@ -1,4 +1,5 @@
-import { AI_MODELS as models } from '../../../common/shared';
+import { useEffect, useState } from 'react';
+import { fetchModels } from '../api';
 
 interface ModelPickerProps {
   selectedModel: string;
@@ -6,6 +7,12 @@ interface ModelPickerProps {
 }
 
 export default function ModelPicker({ selectedModel, onModelChange }: ModelPickerProps) {
+  const [models, setModels] = useState<string[]>([]);
+
+  useEffect(() => {
+    fetchModels().then(setModels);
+  }, []);
+
   return (
     <div className="model-picker">
       <label htmlFor="model-select">Model:</label>
